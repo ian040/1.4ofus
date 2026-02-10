@@ -1,5 +1,5 @@
 // DATA DO INÍCIO DO RELACIONAMENTO (AAAA, MM-1, DD)
-const inicio = new Date(2024, 9, 1); // ajuste a data aqui
+const inicio = new Date(2024, 10, 10); // ajuste a data aqui
 
 // CONTADOR DE TEMPO
 function atualizarContador() {
@@ -15,6 +15,36 @@ function atualizarContador() {
 }
 
 atualizarContador();
+
+/* CONTADOR */
+.contador {
+  font-size: 0.95rem;
+  color: #ff6f91;
+  margin-bottom: 20px;
+}
+
+/* CARTA INVISÍVEL ATÉ APARECER */
+.carta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.carta.aparecer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CORAÇÃO CLICÁVEL */
+.amor-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.amor-btn:active {
+  transform: scale(1.3);
+}
 
 // ANIMAÇÃO DA CARTA AO APARECER
 const carta = document.querySelector(".carta");
