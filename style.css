@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* FUNDO */
 body {
   min-height: 100vh;
   background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
@@ -12,75 +11,60 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
-/* CONTAINER PRINCIPAL */
+/* CONTAINER */
 .container {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 35px;
-  border-radius: 25px;
+  background: #ffffffee;
+  padding: 30px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
   text-align: center;
-  max-width: 460px;
-  animation: fadeIn 1.5s ease;
-  position: relative;
-  z-index: 2;
+  animation: fadeIn 1s ease;
 }
 
 /* TÍTULO */
 h1 {
   font-family: 'Pacifico', cursive;
   color: #ff4f81;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* CONTADOR */
 .contador {
-  font-size: 0.95rem;
   color: #ff6f91;
+  font-size: 0.95rem;
   margin-bottom: 20px;
 }
 
 /* CARTA */
 .carta {
-  text-align: left;
   background: #fff0f5;
-  padding: 25px;
+  padding: 22px;
   border-radius: 20px;
-  margin-bottom: 30px;
-
-  /* para o JS */
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-
-  animation: float 4s ease-in-out infinite;
-}
-
-.carta.aparecer {
-  opacity: 1;
-  transform: translateY(0);
+  text-align: left;
+  margin-bottom: 25px;
 }
 
 .carta p {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   line-height: 1.6;
-  font-size: 1rem;
   color: #444;
 }
 
 .carta .final {
   text-align: center;
-  font-size: 1.05rem;
   color: #ff4f81;
+  font-size: 1.05rem;
 }
 
-/* BOTÃO CORAÇÃO */
+/* CORAÇÃO */
 .amor-btn {
   text-align: center;
   font-size: 2rem;
   cursor: pointer;
-  margin-top: 15px;
+  user-select: none;
   transition: transform 0.2s ease;
 }
 
@@ -88,49 +72,32 @@ h1 {
   transform: scale(1.3);
 }
 
-/* GIF PRINCIPAL */
-.gif-box img {
+/* GIFS */
+.gif-canto {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 110px;
+}
+
+.gif-final {
   width: 100%;
   max-width: 260px;
   border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-/* GIF NO CANTO */
-.gif-canto {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 120px;
-  animation: flutuar 4s ease-in-out infinite;
-  z-index: 1;
-}
-
-/* FUNDO DE CORAÇÕES */
-.hearts::before,
-.hearts::after {
-  content: "💗 💕 💖 💘 💝";
-  position: absolute;
-  font-size: 2rem;
-  animation: hearts 10s linear infinite;
-  opacity: 0.3;
-}
-
-.hearts::after {
-  animation-delay: 5s;
+  margin-bottom: 15px;
 }
 
 /* FOOTER */
 footer {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #777;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÃO */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -138,42 +105,13 @@ footer {
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes flutuar {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes hearts {
-  0% {
-    transform: translateY(100vh);
-  }
-  100% {
-    transform: translateY(-100vh);
-  }
-}
-
 /* RESPONSIVO */
 @media (max-width: 480px) {
   .container {
-    padding: 25px;
+    padding: 22px;
   }
 
   .gif-canto {
-    width: 90px;
-    top: 10px;
-    right: 10px;
+    width: 85px;
   }
 }
